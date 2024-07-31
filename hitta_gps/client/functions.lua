@@ -1,13 +1,12 @@
 ESX = exports["es_extended"]:getSharedObject()
 
-hasItem = function(itemName)
-    local inventory = ESX.GetPlayerData().inventory
-    for i = 1, #inventory do
-        if inventory[i].name == itemName and inventory[i].count > 0 then
-            return true
-        end
+function checkItem(item)
+    local hasItem = ESX.SearchInventory(item, 1)
+    if hasItem >= 1 then
+        return true
+    else
+        return false
     end
-    return false
 end
 
 enableGPS = function(gps)
