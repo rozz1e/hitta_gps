@@ -7,7 +7,7 @@ CreateThread(function()
         local sleep = 1200
 
         if IsLoaded then
-            if hasItem(Config.Item) then
+            if checkItem(Config.Item) then
                 enableGPS()
             else
                 disableGPS()
